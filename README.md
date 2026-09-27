@@ -19,11 +19,62 @@ I used an AI tool to help draft the five test cases based on the login requireme
 
 ## Test cases
 
-1. Successful login with valid credentials (`standard_user`)
-2. Locked-out user cannot log in (`locked_out_user`)
-3. Login fails with a wrong password
-4. Login fails when both username and password are empty
-5. Login fails when the password field is left blank
+**TC-01 — Successful login with valid credentials**
+
+Steps:
+1. Go to https://www.saucedemo.com
+2. Enter `standard_user` in the username field
+3. Enter `secret_sauce` in the password field
+4. Click the Login button
+
+Expected result: The user is redirected to the inventory page (`/inventory.html`) and the page title "Products" is visible.
+
+---
+
+**TC-02 — Locked-out user cannot log in**
+
+Steps:
+1. Go to https://www.saucedemo.com
+2. Enter `locked_out_user` in the username field
+3. Enter `secret_sauce` in the password field
+4. Click the Login button
+
+Expected result: An error message appears saying the user has been locked out. The user stays on the login page.
+
+---
+
+**TC-03 — Login fails with a wrong password**
+
+Steps:
+1. Go to https://www.saucedemo.com
+2. Enter `standard_user` in the username field
+3. Enter an incorrect password (e.g. `wrong_password`)
+4. Click the Login button
+
+Expected result: An error message appears saying the username and password do not match. The user stays on the login page.
+
+---
+
+**TC-04 — Login fails when both fields are empty**
+
+Steps:
+1. Go to https://www.saucedemo.com
+2. Leave the username and password fields empty
+3. Click the Login button
+
+Expected result: An error message appears saying the username is required. The user stays on the login page.
+
+---
+
+**TC-05 — Login fails when the password field is left blank**
+
+Steps:
+1. Go to https://www.saucedemo.com
+2. Enter `standard_user` in the username field
+3. Leave the password field empty
+4. Click the Login button
+
+Expected result: An error message appears saying the password is required. The user stays on the login page.
 
 ## How to install and run
 
